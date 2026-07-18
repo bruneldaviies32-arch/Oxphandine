@@ -1,1 +1,365 @@
+/* ========================= */
+/* RESET */
+/* ========================= */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#000;
+    font-family:"Cormorant Garamond",serif;
+}
+
+/* ========================= */
+/* DIAPORAMA */
+/* ========================= */
+
+#slideshow{
+    position:fixed;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    transition:opacity 2.5s ease;
+    animation:kenburns 20s linear infinite alternate;
+    z-index:-5;
+}
+
+/* ========================= */
+/* COUCHE SOMBRE */
+/* ========================= */
+
+#overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.28);
+    z-index:-4;
+}
+
+/* ========================= */
+/* ETOILES */
+/* ========================= */
+
+#stars{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:-3;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    border-radius:50%;
+    background:white;
+    animation:twinkle 4s infinite;
+}
+
+/* ========================= */
+/* ECRAN D'ACCUEIL */
+/* ========================= */
+
+#startScreen{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    gap:25px;
+
+    color:white;
+
+    text-align:center;
+
+    backdrop-filter:blur(3px);
+
+}
+
+#heart{
+
+    font-size:80px;
+
+    animation:heartbeat 1.6s infinite;
+
+}
+
+#startScreen h1{
+
+    font-size:42px;
+
+    font-weight:500;
+
+}
+
+#startScreen p{
+
+    font-size:22px;
+
+    opacity:.85;
+
+}
+
+#startBtn{
+
+    padding:18px 45px;
+
+    font-size:22px;
+
+    border:none;
+
+    border-radius:50px;
+
+    color:white;
+
+    cursor:pointer;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    transition:.35s;
+
+}
+
+#startBtn:hover{
+
+    transform:scale(1.05);
+
+    background:rgba(255,255,255,.28);
+
+}
+
+/* ========================= */
+/* TEXTE */
+/* ========================= */
+
+#storySection{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:10%;
+
+    text-align:center;
+
+    pointer-events:none;
+
+}
+
+#storyText{
+
+    color:white;
+
+    font-size:clamp(30px,4vw,56px);
+
+    line-height:1.6;
+
+    opacity:0;
+
+    text-shadow:0 0 15px rgba(0,0,0,.7);
+
+}
+
+/* ========================= */
+/* VIDEO */
+/* ========================= */
+
+#videoSection{
+
+    position:absolute;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:black;
+
+}
+
+#birthdayVideo{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+}
+
+/* ========================= */
+/* FINAL */
+/* ========================= */
+
+#birthdaySection{
+
+    position:absolute;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+}
+
+#birthdayTitle{
+
+    color:white;
+
+    font-size:clamp(50px,7vw,100px);
+
+    text-align:center;
+
+    text-shadow:0 0 25px gold;
+
+}
+
+/* ========================= */
+/* CONTINUER */
+/* ========================= */
+
+#continueSection{
+
+    position:absolute;
+
+    bottom:60px;
+
+    width:100%;
+
+    display:none;
+
+    justify-content:center;
+
+}
+
+#continueBtn{
+
+    padding:18px 40px;
+
+    font-size:24px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:white;
+
+    cursor:pointer;
+
+}
+
+/* ========================= */
+/* MESSAGE FINAL */
+/* ========================= */
+
+#loveSection{
+
+    position:absolute;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    color:white;
+
+    text-align:center;
+
+}
+
+#loveSection h1{
+
+    font-size:80px;
+
+}
+
+#loveSection h2{
+
+    margin-top:20px;
+
+    font-size:40px;
+
+}
+
+/* ========================= */
+/* ANIMATIONS */
+/* ========================= */
+
+@keyframes heartbeat{
+
+0%,100%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.15);
+}
+
+}
+
+@keyframes twinkle{
+
+0%{
+opacity:.2;
+transform:scale(.5);
+}
+
+50%{
+opacity:1;
+transform:scale(1.4);
+}
+
+100%{
+opacity:.2;
+transform:scale(.5);
+}
+
+}
+
+@keyframes kenburns{
+
+0%{
+
+transform:scale(1) translate(0,0);
+
+}
+
+100%{
+
+transform:scale(1.18) translate(-2%,-2%);
+
+}
+
+  }
